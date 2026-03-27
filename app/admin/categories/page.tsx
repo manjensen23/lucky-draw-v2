@@ -167,7 +167,7 @@ export default function CategoriesPage() {
           className="bg-red-500 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg hover:bg-red-600 transition-all flex items-center gap-2"
         >
           <History size={18} />
-          Reset Semua Undian
+          Reset all
         </button>
       </div>
 

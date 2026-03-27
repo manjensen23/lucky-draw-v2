@@ -32,17 +32,17 @@ export default function WinnerHistory({ onClose }: WinnerHistoryProps) {
     setLoading(false);
   };
 
-  const clearHistory = async () => {
-    if (!confirm('Are you sure you want to permanently delete all winner history?')) return;
+  // const clearHistory = async () => {
+  //   if (!confirm('Are you sure you want to permanently delete all winner history?')) return;
 
-    setClearing(true);
-    const supabase = createClient();
-    const { error } = await supabase.from('winner_logs').delete().neq('id', 0); // deletes all
-    if (!error) {
-      setLogs([]);
-    }
-    setClearing(false);
-  };
+  //   setClearing(true);
+  //   const supabase = createClient();
+  //   const { error } = await supabase.from('winner_logs').delete().neq('id', 0); // deletes all
+  //   if (!error) {
+  //     setLogs([]);
+  //   }
+  //   setClearing(false);
+  // };
 
   const exportCsv = () => {
     let csv = "ID,Batch ID,Drawn At,Prize Category,Winner Name,Target Group,Status\n";
@@ -165,14 +165,7 @@ export default function WinnerHistory({ onClose }: WinnerHistoryProps) {
               <Download size={18} />
               Export CSV
             </button>
-            {/* <button
-              onClick={clearHistory}
-              disabled={clearing}
-              className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-red-500/10 text-red-400 font-medium hover:bg-red-500/20 active:scale-95 transition-all disabled:opacity-50 disabled:pointer-events-none w-full sm:w-auto"
-            >
-              {clearing ? <Loader2 className="animate-spin" size={18} /> : <Trash2 size={18} />}
-              Clear History
-            </button> */}
+
           </div>
         )}
       </div>
